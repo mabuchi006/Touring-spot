@@ -1,0 +1,20 @@
+<div class='top-bg px-5 px-sm-0'>
+<div class='container px-5 px-sm-0 spot-show'>
+  <div class='row'>
+      <div class='col-md-7'>
+
+      </div>
+      <div class='col-md-11 offset-md-1'>
+        <div class="spot_new">
+            <div class="spot_photo">
+              <%= attachment_image_tag @spot, :image,class:'spot_visual',size: "200x100" %>
+            </div>
+            <div class="spot_text spot_detail_text">
+              <h2><%= @spot.name %></h2>
+              <p><%= @spot.introduction %></p>
+            </div>
+        </div>
+      </div>
+   </div>
+</div>
+</div>

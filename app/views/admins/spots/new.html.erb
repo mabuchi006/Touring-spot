@@ -1,0 +1,37 @@
+<div class="container">
+  <p class="fs-3 mt-3 ms-4">スポット新規登録</p>
+  <div class="row">
+  <%= form_with model: @spot,url: admins_spots_path, local: true do |f| %>
+
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-2 fs-5">スポット画像</div>
+      <div class="col-5"><%= f.attachment_field :image %></div>
+    </div>
+
+    <div class=" row mt-3">
+      <div class="col-3"></div>
+      <div class="col-2 fs-5"><%= f.label :name, "スポット名" %></div>
+      <div class="col-5"><%= f.text_field :name,  size: 39, placeholder: "スポット名" %></div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-3"></div>
+      <div class="col-2 fs-5"><%= f.label :introduction, "スポット説明" %></div>
+      <div class="col-5"><%= f.text_area :introduction,  size: "41x7", placeholder: "ここに説明文を記述"%></div>
+    </div>
+
+     <div class="row mt-3">
+       <div class="col-3"></div>
+       <div class="col-2 fs-5"><%= f.label:genres, "ジャンル" %></div>
+       <div class="col-5"> <%= f.collection_select :genre_id, Genre.all, :id, :name, class: "form-control col-sm-9" %></div>
+     </div>
+
+     <div class="row justify-content-center mt-5">
+        <div class="col-sm-3">
+          <%= f.submit :新規登録, class: "btn btn-success" %>
+        </div>
+     </div>
+  <% end %>
+  </div>
+</div>

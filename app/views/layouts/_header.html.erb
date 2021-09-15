@@ -1,0 +1,58 @@
+<header class="shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+
+
+        <div class="navbar mt-4 nav-left" id="navbarToggleExternalContent">
+          <% if user_signed_in? %>
+            <%= link_to 'My Page', user_path(current_user), class: "btn btn-outline-light nav-menu-text btn-sm" %>
+            <%= link_to ' Spot ',spots_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm" %>
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-light nav-menu-text ms-4 me-4 btn-sm" %>
+            <%= form_with url: search_path, method: :get, class: "search-form", local: true do |f| %>
+              <%= f.text_field :content, size: "18" %>
+              <%= f.select :model, options_for_select({ "スポット" => "spot"}) %>
+              <%= f.select :method, options_for_select({ "完全に一致" => "perfect", "部分一致" => "partical"}) %>
+              <button type="submit" name="commit" value="検索" id="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+            <% end %>
+          <% elsif admin_signed_in? %>
+            <%= link_to ' スポット ', admins_spots_path, class: "btn btn-outline-light nav-menu-text btn-sm" %>
+            <%= link_to ' メンバー ', admins_users_path, class: "btn btn-outline-light nav-menu-text ms-4 btn-sm " %>
+            <%= link_to ' ジャンル一覧 ', admins_genres_path, class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn btn-outline-light nav-menu-text ms-4 me-4 btn-sm" %>
+            <%= form_with url: search_path, method: :get, local: true do |f| %>
+              <%= f.text_field :content, size: "17"  %>
+              <%= f.select :model, options_for_select({ "スポット" => "spot", "ユーザー" => "user"}) %>
+              <%= f.select :method, options_for_select({ "完全に一致" => "perfect", "部分一致" => "partical"}) %>
+              <button type="submit" name="commit" value="検索" id="search-btn">
+                <i class="fas fa-search"></i>
+              </button>
+            <% end %>
+          <% else %>
+            <%= link_to '　 About　 ',about_path,class: "btn btn-outline-light btn-sm" %>
+            <%= link_to ' Spot ',spots_path,class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= link_to ' Signup ', new_user_registration_path,class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= link_to ' Login ', new_user_session_path,class: "btn btn-outline-light ms-4 btn-sm" %>
+            <%= form_with url: search_path, method: :get, class: "search-form", local: true do |f| %>
+              <%= f.text_field :content %>
+              <%= f.select :model, options_for_select({ "スポット" => "spot"}) %>
+              <%= f.select :method, options_for_select({ "完全に一致" => "perfect", "部分一致" => "partical"}) %>
+              <button type="submit" name="commit" id="search-btn" value="検索">
+                <i class="fas fa-search"></i>
+              </button>
+
+            <% end %>
+          <% end %>
+        </div>
+        <nav class="navbar navbar-dark bg-dark header-nav mt-0" media="screen and (max-width: 480px)">
+          <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+          </div>
+        </nav>
+    </div>
+  </nav>
+</header>

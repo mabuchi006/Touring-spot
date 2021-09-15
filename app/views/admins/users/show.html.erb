@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 mt-3 row">
+      <div class=" col-6">
+        <p class="fs-5  bg-light text-center" valign="middle"><%= @user.last_name %><%= @user.first_name %>さんの<br>ユーザー詳細</p>
+      </div>
+
+      <table>
+        <tbody>
+          <tr class="row lh-lg">
+           <td class="col-4 fs-5">ユーザーID</td>
+           <td class="col-8 fs-5"><%= @user.id %></td>
+          </tr>
+          <tr class="row lh-lg mt-2">
+            <td class="col-4 fs-5">氏名</td>
+            <td class="col-8 fs-5"><%= @user.last_name %>　<%= @user.first_name %></td>
+          </tr>
+          <tr class="row lh-lg  mt-2">
+            <td class="col-4 fs-5">郵便番号</td>
+            <td class="col-8 fs-5"><%= @user.postcode %></td>
+          </tr>
+          <tr class="row lh-lg  mt-2">
+            <td class="col-4 fs-5">住所</td>
+            <td class="col-8 fs-5"><%= @user.address %></td>
+          </tr>
+          <tr class="row lh-lg  mt-2">
+            <td class="col-4 fs-5">電話番号</td>
+            <td class="col-8 fs-5"><%= @user.phone_number %></td>
+          </tr>
+          <tr class="row lh-lg  mt-2">
+            <td class="col-4 fs-5">メールアドレス</td>
+            <td class="col-8 fs-5"><%= @user.email %></td>
+          </tr>
+          <tr class="row lh-lg  mt-2">
+            <td class="col-4 fs-5">ユーザーステータス</td>
+            <% if @user.is_deleted == true%>
+            <td class="col-8 fs-5 fw-bold" style="color: gray">退会</td>
+            <% else %>
+            <td class="col-8 fs-5 fw-bold" style="color: green">有効</td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-2"></div>
+      <%= link_to ' 編集する ', edit_admins_user_path(@user.id),class: 'btn btn-success col-1' %>
+    </div>
+  </div>
+</div>

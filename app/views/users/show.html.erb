@@ -1,0 +1,37 @@
+<div class="mypage_photo"></div>
+<div class="container top-bg">
+  <div class="mt-5">
+    <span class="fs-3  offset-md-1 bg-light page-title">マイページ</span>
+  </div>
+
+  <div class="row mt-5">
+    <span class="fst-italic fs-5 col-2">登録情報</span>
+    <%= link_to "編集する", edit_user_path, class: "btn btn-sm btn-secondary col-2 mb-5" %>
+  </div>
+
+  <table class="table table-bordered confirm_table", style="width: 70%">
+    <tbody>
+      <tr>
+        <td class="col-2 bg-light">氏名</td>
+        <td><%= @user.last_name + " " + @user.first_name %></td>
+      </tr>
+      <tr>
+        <td class="bg-light">郵便番号</td>
+        <td><%= @user.postcode %></td>
+      </tr>
+      <tr>
+        <td class="bg-light">住所</td>
+        <td><%= @user.address %></td>
+      </tr>
+      <tr>
+        <td class="bg-light">電話番号</td>
+        <td><%= @user.phone_number %></td>
+      </tr>
+      <tr>
+        <td class="bg-light">メールアドレス</td>
+        <td><%= @user.email %></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

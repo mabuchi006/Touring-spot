@@ -1,0 +1,3 @@
+$("#spot_<%= @spot.id %> .comments-count").html("コメント数: <%= @spot.spot_comments.count %>");
+$(".spot_comments").html("<%= j(render 'spot_comments/index', spot: @spot) %>");
+$("#spot_comment_comment").val("");

@@ -7,6 +7,7 @@ class SpotsController < ApplicationController
 
   def show
     @spot = Spot.find(params[:id])
+    @spot_comment = SpotComment.new
   end
 
   def about
@@ -17,4 +18,14 @@ class SpotsController < ApplicationController
     @spots = Spot.page(params[:page]).reverse_order
   end
 
+  def create
+    @spot = Spot.new(spot_params)
+    @spot.user_id = current_user.id
+    if @spot.save
+      redirect_to spot_path(@spot), notice: "You have created spot successfully."
+    else
+      @spots = Spot.all
+      render 'show'
+    end
+  end
 end

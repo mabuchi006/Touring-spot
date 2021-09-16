@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'searches/search'
 
  devise_for :users, controllers: {
   sessions:      'users/sessions',
@@ -29,6 +30,8 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :spots, only: [:index, :show]
-
+  resources :spots, only: [:index, :show] do
+    resource :favorites, only: [:create, :destroy]
+    resources :spot_comments, only: [:create, :destroy]
+  end
 end

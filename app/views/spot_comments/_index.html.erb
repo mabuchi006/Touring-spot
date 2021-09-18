@@ -5,7 +5,7 @@
 
     	<td><%= spot_comment.comment %></td>
     	<% if current_user == spot_comment_user %>
-      	<td><%= link_to 'Destroy', spot_spot_comment_path(spot_comment.spot_id, spot_comment.id), class: 'btn-sm btn-danger', method: :delete %></td>
+      	<td><%= link_to '削除', spot_spot_comment_path(spot_comment.spot_id, spot_comment.id), class: 'btn-sm btn-danger', method: :delete %></td>
     	<% end %>
     </tr>
   <% end %>

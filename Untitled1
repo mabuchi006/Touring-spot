@@ -1,0 +1,16 @@
+CREATE TABLE "spots" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "genre_id_id" integer, "name" varchar NOT NULL, "image_id" varchar NOT NULL, "introduction" text NOT NULL, "spots" integer, "genre_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE INDEX "index_spots_on_genre_id_id" ON "spots" ("genre_id_id");
+
+
+INSERT INTO spots
+SELECT
+    id,
+    genre_id_id,
+    name,
+    image_id,
+    introduction,
+    spots,
+    genre_id,
+    created_at,
+    updated_at
+FROM spots_old

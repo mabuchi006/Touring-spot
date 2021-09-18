@@ -13,7 +13,7 @@
               <h2><%= @spot.name %></h2>
               <p><%= @spot.introduction %></p>
             </div>
-            <td class="favorite-btn"><%= render "favorites/favorite-btn", spot: @spot %></td>
+            <div class="favorite-btn"><%= render "favorites/favorite-btn", spot: @spot %></div>
               <td>コメント数: <%= @spot.spot_comments.count %></td>
          <%= render 'spot_comments/index', spot: @spot,spot_comments: @spot_comment%>
         </div>

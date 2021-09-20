@@ -1,24 +1,44 @@
-# README
+# Touring-spot
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+おすすめするツーリングスポットをみることができるサイトです。
+私が行ったことのあるツーリングスポットを紹介します。
+コメント、いいねをすることができます。
+サイトを通じてここに行ってみたいという興味が湧いてくれるといいと思います。
 
-Things you may want to cover:
+### サイトテーマ
+おすすめのツーリングスポット
 
-* Ruby version
+### テーマを選んだ理由
+私は、日本の様々なところをバイクで訪れました。
+ツーリングをきっかけに様々なことに挑戦することができ、
+ここに行ってよかったと思うことができました。
+私が実際に行ってみて特にここに行ってよかったと思えるところを
+紹介していければいいと考えています。
 
-* System dependencies
+### ターゲットユーザ
+旅行やツーリングに興味がある人々
 
-* Configuration
+### 主な利用シーン
+どこかに行きたいときに
 
-* Database creation
+## 設計書
+テーブル定義書　https://docs.google.com/spreadsheets/d/1EhurvG5N8_znd8Heggs1Uft8HwcsvArc/edit?usp=sharing&ouid=105585445358637617149&rtpof=true&sd=true
+アプリケーション設計詳細書　https://docs.google.com/spreadsheets/d/12mMuib5kPdpfJ4A1kWLTVGaLeWR3cJcu/edit?usp=sharing&ouid=105585445358637617149&rtpof=true&sd=true
 
-* Database initialization
+## チャレンジ要素一覧
+https://docs.google.com/spreadsheets/d/1LNLHktYEHFUeXEs5dubrRo-ChByfZaw4kNc5ly-o_3k/edit?usp=sharing
 
-* How to run the test suite
+## 開発環境
+- OS：Windows10
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
+## 使用素材
+使用の際は都度追記していきます。
 
-* Deployment instructions
+機能一覧 ユーザ機能- コメント機能- いいね機能- デプロイ- リーダブルコードの意識 （インデント、変数名を正しく書く）
 
-* ...
+・非同期　・写真 ・検索機能　・管理者機能

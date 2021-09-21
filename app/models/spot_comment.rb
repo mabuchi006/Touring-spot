@@ -1,6 +1,6 @@
 class SpotComment < ApplicationRecord
   belongs_to :user
-	belongs_to :spot
+  belongs_to :spot
 
-	validates :comment, presence: true
+  validates :comment, presence: true
 end

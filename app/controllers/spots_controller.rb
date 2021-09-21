@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-  before_action :authenticate_customer!,except:[:index, :show]
+  before_action :authenticate_customer!, except: [:index, :show]
 
   def top
     @spots = Spot.all
@@ -16,7 +16,6 @@ class SpotsController < ApplicationController
   def index
     @spots = Spot.all
     @spots = Spot.page(params[:page]).reverse_order
-
   end
 
   def create

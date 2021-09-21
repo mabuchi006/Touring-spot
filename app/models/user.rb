@@ -11,19 +11,16 @@ class User < ApplicationRecord
 
   validates :last_name, presence: true
   validates :first_name, presence: true
-  validates :postcode, presence: true, format: { with: /\A\d{7}\z/ } #郵便番号ハイフンなし7桁
+  validates :postcode, presence: true, format: { with: /\A\d{7}\z/ } # 郵便番号ハイフンなし7桁
   validates :address, presence: true
-  validates :phone_number, presence: true, format: { with: /\A\d{10,11}\z/ } #電話番号ハイフンなし10・11桁
+  validates :phone_number, presence: true, format: { with: /\A\d{10,11}\z/ } # 電話番号ハイフンなし10・11桁
 
-
-
-  #def active_for_authentication?
-   # super && (self.is_deleted == false)
-  #end
-
+  # def active_for_authentication?
+  # super && (self.is_deleted == false)
+  # end
 
   def full_name
-    self.last_name + self.first_name
+    last_name + first_name
   end
 
   def self.search_for(content, method)
@@ -38,6 +35,5 @@ class User < ApplicationRecord
     end
   end
 
-  scope :full_name, -> { self.last_name + self.first_name }
-
+  scope :full_name, -> { last_name + first_name }
 end

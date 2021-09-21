@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
   get 'searches/search'
 
- devise_for :users, controllers: {
-  sessions:      'users/sessions',
-  passwords:     'users/passwords',
-  registrations: 'users/registrations'
- }
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
+  }
 
   devise_for :admins, controllers: {
-  sessions:      'admins/sessions',
-  passwords:     'admins/passwords',
-  registrations: 'admins/registrations'
- }
+    sessions: 'admins/sessions',
+    passwords: 'admins/passwords',
+    registrations: 'admins/registrations',
+  }
 
   root 'homes#top'
-  get '/about',to: 'homes#about'
+  get '/about', to: 'homes#about'
   get '/search', to: 'searches#search'
 
   namespace :admins do
@@ -23,12 +23,12 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show, :edit, :update]
   end
 
-    resource :user, only: [:show, :edit, :update] do
-      collection do
-        get 'unsubscribe'
-        patch 'withdraw'
-      end
+  resource :user, only: [:show, :edit, :update] do
+    collection do
+      get 'unsubscribe'
+      patch 'withdraw'
     end
+  end
 
   resources :spots, only: [:index, :show] do
     resource :favorites, only: [:create, :destroy]

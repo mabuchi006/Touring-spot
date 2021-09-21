@@ -6,16 +6,22 @@
       </div>
       <div class='col-md-11 offset-md-1'>
         <div class="spot_new">
-            <div class="spot_photo">
-              <%= attachment_image_tag @spot, :image,class:'spot_visual',size: "200x100" %>
+            <div class="d-flex justify-content-center">
+              <%= attachment_image_tag @spot, :image,class:'spot_visual',size: "400x200" %>
             </div>
-            <div class="spot_text spot_detail_text">
+            <div class="d-flex justify-content-center">
               <h2><%= @spot.name %></h2>
               <p><%= @spot.introduction %></p>
             </div>
-            <div class="favorite-btn"><%= render "favorites/favorite-btn", spot: @spot %></div>
+            <div class="d-flex justify-content-center">
+            <div class="favorite-btn">いいね: <%= render "favorites/favorite-btn", spot: @spot %></div>
+            </div>
+            <div class="d-flex justify-content-center">
               <td>コメント数: <%= @spot.spot_comments.count %></td>
-         <%= render 'spot_comments/index', spot: @spot,spot_comments: @spot_comment%>
+            </div>
+            <div class="d-flex justify-content-center">
+            <%= render 'spot_comments/index', spot: @spot,spot_comments: @spot_comment%>
+            </div>
         </div>
       </div>
    </div>

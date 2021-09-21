@@ -6,7 +6,8 @@ class Admins::SpotsController < ApplicationController
   end
 
   def index
-    @spots = Spot.page(params[:page]).per(10)
+    @spots = Spot.all
+    @spots = Spot.page(params[:page]).reverse_order
   end
 
   def new

@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap";
 
 body {
   background-image: image-url("hoge.jpg");}
+
+  //いいねボタン
+.like-delete {
+ color: #ea5550;
+}
+

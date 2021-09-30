@@ -2,7 +2,6 @@
   <% @spot.spot_comments.each do |spot_comment| %>
     <% spot_comment_user = spot_comment.user %>
     <tr>
-
     	<td><%= spot_comment.comment %></td>
     	<% if current_user == spot_comment_user %>
       	<td><%= link_to '削除', spot_spot_comment_path(spot_comment.spot_id, spot_comment.id), class: 'btn-sm btn-danger', method: :delete %></td>
@@ -10,7 +9,9 @@
     </tr>
   <% end %>
 </table>
+<div class="d-flex justify-content-center">
 <%= form_with model:[spot,spot_comments], local: true do |f| %>
-  <%= f.text_area :comment, size:"90x5" %><br>
+  <%= f.text_area :comment, size:"50x5" %><br>
   <%= f.submit '送信'%>
 <% end %>
+</div>

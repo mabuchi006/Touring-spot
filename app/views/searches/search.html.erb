@@ -16,16 +16,13 @@
     <% @records.each do |spot| %>
         <ul>
         <hr class="cp_hr01" />
-        <li class="spot_icon">
           <%= link_to spot_path(spot) do %>
-          <%= attachment_image_tag spot, :image,class:'spot_visual',size: "200x100" %>
+          <%= attachment_image_tag spot, :image,class:'spot_visual',size: "400x200" %>
           <% end %>
           <div class="spot_text">
           <p class="spot_name">スポット名：<%= spot.name %></p>
-          <%= link_to "スポット詳細" ,spot_path(spot),class:'btn btn-signup  mt-4' %>
+          <%= link_to "スポット詳細" ,spot_path(spot),class:"btn btn-primary" %>
           </div>
-
-        </li>
         </ul>
 
     <% end %>
@@ -68,21 +65,7 @@
     </div>
   </div>
 </div>
-        <tbody>
-          <% @records.each do |user| %>
-            <tr valign="middle" class="lh-lg">
-              <td><%= user.id %></td>
-              <td><%= link_to user.last_name + "" + customer.first_name,admins_userr_path(user.id),:style => "color: black;text-decoration: underline" %></td>
-              <td><%= user.email %></td>
-              <% if user.is_deleted == true%>
-              <td class="fw-light" style="color: gray">退会</td>
-              <% else %>
-              <td class="fw-bold" style="color:green">有効</td>
-              <% end %>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+
     </div>
     </div>
   </div>

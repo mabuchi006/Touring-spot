@@ -23,11 +23,13 @@
 どこかに行きたいときに
 
 ## 設計書
-テーブル定義書　https://bit.ly/3zOST2f
-アプリケーション設計詳細書 https://bit.ly/3zOST2f
+テーブル定義書
+https://bit.ly/3zOST2f
+アプリケーション設計詳細書
+https://bit.ly/39KnXG4
 
 ## チャレンジ要素一覧
-https://bit.ly/3zOST2f
+https://bit.ly/39KnXG4
 
 ## 開発環境
 - OS：Windows10

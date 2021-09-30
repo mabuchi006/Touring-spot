@@ -29,7 +29,7 @@ https://bit.ly/3zOST2f
 https://bit.ly/39KnXG4
 
 ## チャレンジ要素一覧
-https://bit.ly/39KnXG4
+https://bit.ly/3uhnGUp
 
 ## 開発環境
 - OS：Windows10

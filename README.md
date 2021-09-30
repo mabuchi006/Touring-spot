@@ -23,11 +23,11 @@
 どこかに行きたいときに
 
 ## 設計書
-テーブル定義書　https://docs.google.com/spreadsheets/d/1EhurvG5N8_znd8Heggs1Uft8HwcsvArc/edit?usp=sharing&ouid=105585445358637617149&rtpof=true&sd=true
-アプリケーション設計詳細書　https://docs.google.com/spreadsheets/d/12mMuib5kPdpfJ4A1kWLTVGaLeWR3cJcu/edit?usp=sharing&ouid=105585445358637617149&rtpof=true&sd=true
+テーブル定義書　https://bit.ly/3zOST2f
+アプリケーション設計詳細書 https://bit.ly/3zOST2f
 
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1LNLHktYEHFUeXEs5dubrRo-ChByfZaw4kNc5ly-o_3k/edit?usp=sharing
+https://bit.ly/3zOST2f
 
 ## 開発環境
 - OS：Windows10

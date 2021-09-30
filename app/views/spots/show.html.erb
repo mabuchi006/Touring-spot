@@ -17,7 +17,7 @@
             <div class="favorite-btn">いいね: <%= render "favorites/favorite-btn", spot: @spot %></div>
             </div>
             <div class="d-flex justify-content-center">
-              <td>コメント数: <%= @spot.spot_comments.count %></td>
+              コメント数: <%= @spot.spot_comments.count %>
             </div>
             <div class="d-flex justify-content-center">
             <%= render 'spot_comments/index', spot: @spot,spot_comments: @spot_comment%>

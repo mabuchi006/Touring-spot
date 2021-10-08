@@ -3,9 +3,7 @@ class SpotCommentsController < ApplicationController
 
   def create
     @spot = Spot.find(params[:spot_id])
-    @spot_comment = SpotComment.new(spot_comment_params)
-    @spot_comment.spot_id = @spot.id
-    @spot_comment.user_id = current_user.id
+    @spot_comment = @spot.spo_comments.new(spot_comment_params.merge(user_id: current_user.id))
     if @spot_comment.save
       redirect_to spot_path(@spot.id)
     else

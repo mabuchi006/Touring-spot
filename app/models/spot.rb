@@ -17,11 +17,11 @@ class Spot < ApplicationRecord
   #  (self.price / 1.08).round
   # end
 
-  def self.search_for(content, method)
+  def self.search_for_for(content, method)
     if method == "perfect"
-      Spot.where(name: content)
+      where(name: content)
     else
-      Spot.where("name LIKE ?", "%" + content + "%")
+      where("name LIKE ?", "%" + content + "%")
     end
   end
 end
